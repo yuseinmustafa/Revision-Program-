@@ -1,0 +1,198 @@
+#A function for entering the username again if it was wrong at the first attempt
+def enter_username_again():
+    enter_username = input("\nPlease enter your username again ")
+
+    username1 = "user 1"
+    username2 = "user 2"
+    username3 = "user 3"
+
+    #Conditon controlled while loop - as long as the username is wrong, keep looping - ask the user to enter the username as long as it is wrong. Once username is valid, ask for their password
+    if enter_username == username1 or enter_username == username2 or enter_username == username3:
+        print("\nUsername is valid!")
+    else:
+        while enter_username != username1 or username2 or username3:
+            enter_username = input(
+                "\nInvalid. \nPlease enter your username again ")
+            if enter_username == username1 or enter_username == username2 or enter_username == username3:
+                print("\nUsername is now valid")
+
+                break
+    if enter_username == username1 or enter_username == username2 or enter_username == username3:
+
+        enter_password = input("\nPlease enter your password ")
+        password = "password123"
+
+        if enter_password == password:
+            print("\nValid password")
+            job_id()
+        else:
+            print("\nInvalid password")
+            pass_again = input(
+                "\nWould you like to enter your password agian? ").lower()
+            if pass_again == "yes":
+                enter_password_again()
+            elif pass_again == "no":
+                print("\nBye")
+                import sys
+                sys.exit()
+
+
+    #A function for the tasks and Job ID
+def job_id():
+
+    #If password is valid, then user is asked to select a JobID between 1-8 with a task to complete.
+
+    JOB_ID = int(input("\nPlease select a JOB ID between 1 - 8: "))
+
+    if JOB_ID == 1:
+        print(
+            "\nYour JobID task is to create an algorithm for free school meals \nJobID is: "
+            + str(JOB_ID))
+    elif JOB_ID == 2:
+        print(
+            "\nYour JobID task is to create a flowchart for a free school meals system \nJobID is: "
+            + str(JOB_ID))
+    elif JOB_ID == 3:
+        print("\nYour JobID task is to work on revision doc. \nJobID is: " +
+              str(JOB_ID))
+    elif JOB_ID == 4:
+        print("\nYour task is to ask teacher for help. \nJobID is: " +
+              str(JOB_ID))
+    elif JOB_ID == 5:
+        print("\nRead p44 in textbook. \nJobID is: " + str(JOB_ID))
+    elif JOB_ID == 6:
+        print("\nThink of an algorithm. \nJobID is: " + str(JOB_ID))
+    elif JOB_ID == 7:
+        print("\nDo nothing. \nJobID is: " + str(JOB_ID))
+    elif JOB_ID == 8:
+        print("\nCreate a flowchart. \nJobID is: " + str(JOB_ID))
+
+#Wait two seconds before randomly selected task with JobID
+    import time
+    print("\nLoading your randomly selected JobID and task...")
+    time.sleep(4)
+
+    #User is given a randomly selected JobID between 9-20 to complete
+    import random
+    number = random.randint(9, 20)
+    9 == "\nRevise paper 1"
+    10 == "\nRevise for mock exam"
+    11 == "\nRevise a topic of your choice"
+    12 == "\nDo some coding in Python"
+    13 == "\nCollabrate with other students"
+    14 == "\nSee how you can boost up your grade"
+    15 == "\nRefresh your memory with questions from Topic 1"
+    16 == "\nTopic 2 - Paper 1"
+    17 == "\nTopic 4 - Paper 1"
+    18 == "\nTopic 6 - Paper 1"
+    19 == "\Topic 5 - Paper 1"
+    20 == "\nTopic 7 - Paper 1"
+    print("\nYour randomly selected JOB ID task is: " + str(number))
+    if number == 9:
+        print("\nAnd the task itself is: Revise for paper 1")
+    elif number == 10:
+        print("\nAnd the task itself is: Revise for mock exam")
+    elif number == 11:
+        print("\nAnd the task itself is: Revise a topic of your choice")
+    elif number == 12:
+        print("\nAnd the task itself is: Do some coding in Python")
+    elif number == 13:
+        print("\nAnd the task itself is: Collabrate with other students")
+    elif number == 14:
+        print("\nAnd the task itself is: See how you can boost up your grade")
+    elif number == 15:
+        print(
+            "\nAnd the task itself is: Refresh your memory with questions from Topic 1"
+        )
+    elif number == 16:
+        print("\nAnd the task itself is to revise: Topic 2 - Paper 1")
+    elif number == 17:
+        print("\nAnd the task itself is to revise: Topic 4 - Paper 1")
+    elif number == 18:
+        print("\nAnd the task itself is to revise: Topic 6 - Paper 1")
+    elif number == 19:
+        print("\nAnd the task itself is to revise: Topic 5 - Paper 1")
+    elif number == 20:
+        print("\nAnd the task itself is to revise: Topic 7 - Paper 1")
+
+
+#A function for the user to enter their password if it is wrong at the first attempt
+def enter_password_again():
+    ent_password = input("\nPlease enter your password again ")
+
+    password = "password123"
+
+    if ent_password == password:
+        print("\nValid password.")
+    else:
+        while ent_password != password:
+            ent_password = input(
+                "\nInvalid. \nPlease enter your password again ")
+            if ent_password == password:
+                print("\nPassword is now valid")
+                break
+
+    if ent_password == password:
+        job_id()
+
+
+#User enters their username
+
+username = input("Please enter your username ")
+
+#Valid usernames and password
+username1 = "user 1"
+username2 = "user 2"
+username3 = "user 3"
+password = "password123"
+
+#Validating username and if username is not valid, user can enter it again
+if username == username1 or username == username2 or username == username3:
+    print("\nUsername is valid")
+    import time
+    time.sleep(0.8)
+else:
+    print("\nInvalid username")
+    repeat = input("\nWould you like to enter your username again? ").lower()
+    if repeat == "yes":
+        enter_username_again()
+    elif repeat == "no":
+        print("\nBye")
+        import sys
+        sys.exit()
+    else:
+        repeat_a = input(
+            "\nInvalid choice. \nPlease enter either yes or no ").lower()
+        if repeat_a == "yes":
+            enter_username_again()
+        elif repeat_a == "no":
+            print("\nBye")
+        import sys
+        sys.exit()
+
+#If valid username, then user enters password
+if username == username1 or username == username2 or username == username3:
+    enter_password = input("\nPlease enter your password ")
+
+    if enter_password == password:
+        print("\nValid password.")
+        job_id()
+    else:
+        print("\nInvalid password!")
+        repeat_password = input(
+            "\nWould you like to enter your password again? ").lower()
+        if repeat_password == "yes":
+            enter_password_again()
+        elif repeat_password == "no":
+            print("\nBye")
+            import sys
+            sys.exit()
+        else:
+            repeat_p = input(
+                "\nInvalid choice! \nPlease enter yes or no ").lower()
+            if repeat_p == "yes":
+                enter_password_again()
+            elif repeat_p == "no":
+                print("\nBye")
+            import sys
+            sys.exit()
